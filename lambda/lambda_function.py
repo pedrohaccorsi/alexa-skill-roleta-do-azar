@@ -77,7 +77,7 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         
         return (
             handler_input.response_builder
-                .speak(str)
+                .speak(outSpeach)
                 .response
         )
 
