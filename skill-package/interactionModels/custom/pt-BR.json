@@ -40,13 +40,38 @@
                       {
                           "name": "rouletteName",
                           "type": "CUSTOM_NomeRoleta"
+                      },
+                      {
+                          "name": "itemOne",
+                          "type": "CUSTOM_ItemRoleta"
+                      },
+                      {
+                          "name": "itemTwo",
+                          "type": "CUSTOM_ItemRoleta"
+                      },
+                      {
+                          "name": "itemThree",
+                          "type": "CUSTOM_ItemRoleta"
+                      },
+                      {
+                          "name": "itemFour",
+                          "type": "CUSTOM_ItemRoleta"
+                      },
+                      {
+                          "name": "itemFive",
+                          "type": "CUSTOM_ItemRoleta"
+                      },
+                      {
+                          "name": "itemSix",
+                          "type": "CUSTOM_ItemRoleta"
                       }
                   ],
                   "samples": [
-                      "adicionar {rouletteName}",
-                      "criar {rouletteName}",
-                      "Adicionar a roleta {rouletteName}",
-                      "Criar a roleta {rouletteName}"
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix}",
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} {itemFour} {itemFive}",
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} {itemFour}",
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo}  {itemThree}",
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo}"
                   ]
               }
           ],
@@ -90,6 +115,106 @@
                           }
                       }
                   ]
+              },
+              {
+                  "name": "CUSTOM_ItemRoleta",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "Pano"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Varrer"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Louça"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Piscina"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Playstation"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Play"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Xbox"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Carro"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Natação"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Dragonball"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Naruto"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Mãe"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Pai"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Guga"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Duda"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Guto"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Carlos"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "João"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Pedro"
+                          }
+                      }
+                  ]
               }
           ]
       },
@@ -124,6 +249,48 @@
                           "prompts": {
                               "elicitation": "Elicit.Slot.407874898644.83626156471"
                           }
+                      },
+                      {
+                          "name": "itemOne",
+                          "type": "CUSTOM_ItemRoleta",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
+                      },
+                      {
+                          "name": "itemTwo",
+                          "type": "CUSTOM_ItemRoleta",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
+                      },
+                      {
+                          "name": "itemThree",
+                          "type": "CUSTOM_ItemRoleta",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
+                      },
+                      {
+                          "name": "itemFour",
+                          "type": "CUSTOM_ItemRoleta",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
+                      },
+                      {
+                          "name": "itemFive",
+                          "type": "CUSTOM_ItemRoleta",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
+                      },
+                      {
+                          "name": "itemSix",
+                          "type": "CUSTOM_ItemRoleta",
+                          "confirmationRequired": false,
+                          "elicitationRequired": false,
+                          "prompts": {}
                       }
                   ]
               }
