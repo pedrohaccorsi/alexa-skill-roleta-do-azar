@@ -108,7 +108,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
                     .response
             )
         
-        chosen = items[ random.randint(0, len(items)) ] 
+        chosen = items[ random.randint(0, len(items)-1) ] 
         
         outSpeach    = (
             'Ok! Pra roleta '       + rouletteName +
