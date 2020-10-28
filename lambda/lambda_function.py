@@ -37,20 +37,30 @@ class LaunchRequestHandler(AbstractRequestHandler):
         )
 
 
-class HelloWorldIntentHandler(AbstractRequestHandler):
-    """Handler for Hello World Intent."""
+class RodarRoletaIntentHandler(AbstractRequestHandler):
+
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return ask_utils.is_intent_name("HelloWorldIntent")(handler_input)
-
+        return ( 
+            ask_utils.is_request_type("IntentRequest"    )(handler_input) and 
+            ask_utils.is_intent_name( "RodarRoleta")(handler_input) 
+        )
+               
+        
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Hello World!"
+        chosen       = 'João'
+        rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
+        enrolation_0 = 'o sortudo da vez é...'
+        enrolation_1 = 'hmmm...'
+        enrolation_2 = 'ainda tô pensando pera...'
+        enrolation_0 = 'o sortudo da vez é... ... ... ...'
+        enrolation_1 = 'hhhhmmmmmmmmmmmmmmm... .... ...'
+        enrolation_2 = 'ainda tô pensando, pera... ... ... ... ...'
 
         return (
             handler_input.response_builder
-                .speak(speak_output)
-                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .speak(f'Ok! Pra roleta {rouletteName},  {enrolation_0} {enrolation_1} {enrolation_2} tá: {chosen} !')
                 .response
         )
 
@@ -158,7 +168,7 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 sb = SkillBuilder()
 
 sb.add_request_handler(LaunchRequestHandler())
-sb.add_request_handler(HelloWorldIntentHandler())
+sb.add_request_handler(RodarRoletaIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
