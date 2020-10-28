@@ -97,7 +97,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         
         attr = handler_input.attributes_manager.persistent_attributes
-        rouletteName = attr["attr" ]
+        rouletteName = attr["name" ]
         items        = attr["items"]
         
         if ( rouletteName != handler_input.request_envelope.request.intent.slots["rouletteName" ].value ):
