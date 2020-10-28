@@ -49,38 +49,11 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         slots              = handler_input.request_envelope.request.intent.slots
         attributes_manager = handler_input.attributes_manager
         rouletteName       = slots["rouletteName" ].value 
-        items              = [] 
+        firstiItem         = slots["itemOne"      ].value  
         
-        if slots["itemOne" ].value != None and lots["itemOne" ].value != 'None':
-            items.append(slots["itemOne" ].value)
-
-        if slots["itemOTwo" ].value != None and lots["itemTwo" ].value != 'None':
-            items.append(slots["itemTwo" ].value)
-            
-        if slots["itemThree" ].value != None and lots["itemThree" ].value != 'None':
-            items.append(slots["itemThree" ].value)
-            
-        if slots["itemFour" ].value != None and lots["itemFour" ].value != 'None':
-            items.append(slots["itemFour" ].value)
-            
-        if slots["itemFive" ].value != None and lots["itemFive" ].value != 'None':
-            items.append(slots["itemFive" ].value)
-            
-        if slots["itemSix" ].value != None and lots["itemSix" ].value != 'None':
-            items.append(slots["itemSix" ].value)
-
-        roulette_attributes = {
-            "name" : rouletteName,
-            "items": items
-        }
-
-        str = 'roleta: ' + rouletteName + ' '
-        for item in items:
-            str += 'item: ' + item + ' '
-
         return (
             handler_input.response_builder
-                .speak(str)
+                .speak(rouletteName + ' ... ' + firstiItem)
                 .response
         )
 
