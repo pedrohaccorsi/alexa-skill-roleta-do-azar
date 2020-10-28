@@ -49,16 +49,33 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         slots              = handler_input.request_envelope.request.intent.slots
         attributes_manager = handler_input.attributes_manager
         rouletteName       = slots["rouletteName" ].value   
+        items              = []
         
-        str = rouletteName + ' ... ' + slots["itemOne" ].value   
+        if ( slots["itemOne"  ] is not None ): items.append( slots["itemOne"  ] )
+        if ( slots["itemTwo"  ] is not None ): items.append( slots["itemTwo"  ] )
+        if ( slots["itemThree"] is not None ): items.append( slots["itemThree"] )
+        if ( slots["itemFour" ] is not None ): items.append( slots["itemFour" ] )
+        if ( slots["itemFive" ] is not None ): items.append( slots["itemFive" ] )
+        if ( slots["itemSix"  ] is not None ): items.append( slots["itemSix"  ] )
+
+        outSpeach = f'Ok! Salvei a roleta {rouletteName} com os items '
         
-        for key in slots:
-            try:
-                if key.value != rouletteName:
-                    str = str +  ' ... ' + key.value + ' ... '
-            except:
-                continue
+        for i in range(len(items)):
+            if i == len(items)-1:
+                outSpeach += ' e ' + items[i]
+            else:
+                outSpeach += ' , ' + items[i]
                 
+        attributes_manager = handler_input.attributes_manager
+
+        roulette_attributes = {
+            "name": rouletteName,
+            "items" : items
+        }
+
+        attributes_manager.persistent_attributes = roulette_attributes
+        attributes_manager.save_persistent_attributes()
+        
         return (
             handler_input.response_builder
                 .speak(str)
