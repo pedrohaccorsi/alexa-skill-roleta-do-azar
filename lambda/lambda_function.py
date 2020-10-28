@@ -48,13 +48,7 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         
         slots              = handler_input.request_envelope.request.intent.slots
         attributes_manager = handler_input.attributes_manager
-        rouletteName       = slots["rouletteName" ].value 
-        firstiItem         = slots["itemOne"      ].value
-        secondItem         = ''
-        thirdItem          = ''
-        fouthItem          = ''
-        fifthItem          = ''
-        sixthItem          = ''
+        rouletteName       = slots["rouletteName" ].value   
         
         str = rouletteName + ' ... '
         for key in slots:
