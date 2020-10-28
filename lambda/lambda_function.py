@@ -1,12 +1,15 @@
+import os
 import logging
 import ask_sdk_core.utils as ask_utils
 
-from ask_sdk_core.skill_builder import SkillBuilder
+from ask_sdk_core.skill_builder       import CustomSkillBuilder
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
 from ask_sdk_core.dispatch_components import AbstractExceptionHandler
-from ask_sdk_core.handler_input import HandlerInput
+from ask_sdk_core.handler_input       import HandlerInput
+from ask_sdk_model                    import Response
+from ask_sdk_s3.adapter               import S3Adapter
 
-from ask_sdk_model import Response
+s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -27,6 +30,25 @@ class LaunchRequestHandler(AbstractRequestHandler):
             handler_input.response_builder
                 .speak(speak_output)
                 .ask(speak_output)
+                .response
+        )
+
+class CriarRoletaIntentHandler(AbstractRequestHandler):
+
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ( 
+            ask_utils.is_request_type("IntentRequest"    )(handler_input) and 
+            ask_utils.is_intent_name( "CriarRoletaIntent")(handler_input) 
+        )
+               
+        
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+
+        return (
+            handler_input.response_builder
+                .speak('criando roleta')
                 .response
         )
 
@@ -170,10 +192,11 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 # defined are included below. The order matters - they're processed top to bottom.
 
 
-sb = SkillBuilder()
+sb = CustomSkillBuilder(persistence_adapter=s3_adapter)
 
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(RodarRoletaIntentHandler())
+sb.add_request_handler(CriarRoletaIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
