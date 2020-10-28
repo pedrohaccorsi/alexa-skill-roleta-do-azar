@@ -60,14 +60,14 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         enrolation_5 = ' ainda tô pensando, pera... ... ... ... ...'
         enrolation_6 = ' tá...'
         outSpeach    = (
-            'Ok! Pra roleta' +  
-            rouletteName     +
-            enrolation_0     + 
-            enrolation_1     + 
-            enrolation_2     + 
-            enrolation_4     + 
-            enrolation_5     + 
-            enrolation_6     + 
+            'Ok! Pra roleta ' +  
+            rouletteName      +
+            enrolation_0      + 
+            enrolation_1      + 
+            enrolation_2      + 
+            enrolation_4      + 
+            enrolation_5      + 
+            enrolation_6      + 
             chosen
         )
         return (
