@@ -50,7 +50,7 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         attributes_manager = handler_input.attributes_manager
         rouletteName       = slots["rouletteName" ].value   
         
-        str = rouletteName + ' ... ' slots["itemOne" ].value   
+        str = rouletteName + ' ... ' + slots["itemOne" ].value   
         
         for key in slots:
             try:
