@@ -51,12 +51,12 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         rouletteName       = slots["rouletteName" ].value   
         items              = []
         
-        if ( slots["itemOne"  ] is not None ): items.append( slots["itemOne"  ] )
-        if ( slots["itemTwo"  ] is not None ): items.append( slots["itemTwo"  ] )
-        if ( slots["itemThree"] is not None ): items.append( slots["itemThree"] )
-        if ( slots["itemFour" ] is not None ): items.append( slots["itemFour" ] )
-        if ( slots["itemFive" ] is not None ): items.append( slots["itemFive" ] )
-        if ( slots["itemSix"  ] is not None ): items.append( slots["itemSix"  ] )
+        if ( slots["itemOne"  ].value is not None ): items.append( slots["itemOne"  ].value )
+        if ( slots["itemTwo"  ].value is not None ): items.append( slots["itemTwo"  ].value )
+        if ( slots["itemThree"].value is not None ): items.append( slots["itemThree"].value )
+        if ( slots["itemFour" ].value is not None ): items.append( slots["itemFour" ].value )
+        if ( slots["itemFive" ].value is not None ): items.append( slots["itemFive" ].value )
+        if ( slots["itemSix"  ].value is not None ): items.append( slots["itemSix"  ].value )
 
         outSpeach = f'Ok! Salvei a roleta {rouletteName} com os items '
         
