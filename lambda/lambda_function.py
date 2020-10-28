@@ -5,7 +5,6 @@
 # session persistence, api calls, and more.
 # This sample is built using the handler classes approach in skill builder.
 import logging
-#import rouleteHandler
 import ask_sdk_core.utils as ask_utils
 
 from ask_sdk_core.skill_builder import SkillBuilder
@@ -50,7 +49,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        chosen       = 'João'#rouleteHandler.getLoser()
+        chosen       = 'João' 
         rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
         enrolation_0 = ' o sortudo da vez é...'
         enrolation_1 = ' hmmm...'
