@@ -114,13 +114,10 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
                     .speak(f'Ops, a roleta possui somente {len(items)} ítens!')
                     .response
             )
-
-        
-
-              
+             
         return (
             handler_input.response_builder
-                .speak(outSpeach)
+                .speak(self.__getLoser(items))
                 .response
         )
 
