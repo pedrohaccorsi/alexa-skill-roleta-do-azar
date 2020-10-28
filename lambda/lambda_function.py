@@ -145,7 +145,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
             return( f'A decisão é unânime: {chosen}' )
 
         elif ( kind_of_response == 4):
-            return= ( f'Nessa não preciso nem pensar, claro que é o {chosen}' )
+            return ( f'Nessa não preciso nem pensar, claro que é o {chosen}' )
 
         elif ( kind_of_response == 5 and len(items) >= 3 ):
             chosen_2 = items[ random.randint(0, len(items)-1) ]
