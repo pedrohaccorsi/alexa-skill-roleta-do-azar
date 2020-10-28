@@ -112,7 +112,8 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         
         outSpeach    = (
             'Ok! Pra roleta '       + rouletteName +
-            ' o sortuto da vez é: ' + chosen
+            ' o sortuto da vez é: ' + chosen       +
+            ' ... não, pensando bem, mudei de ideia... dessa vez é o Guga'
         )
         
         return (
