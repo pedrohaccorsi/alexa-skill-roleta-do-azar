@@ -5,6 +5,7 @@
 # session persistence, api calls, and more.
 # This sample is built using the handler classes approach in skill builder.
 import logging
+#import rouleteHandler
 import ask_sdk_core.utils as ask_utils
 
 from ask_sdk_core.skill_builder import SkillBuilder
@@ -49,18 +50,28 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        chosen       = rouleteHandler.getLoser()
+        chosen       = 'joão'#rouleteHandler.getLoser()
         rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
         enrolation_0 = 'o sortudo da vez é...'
         enrolation_1 = 'hmmm...'
         enrolation_2 = 'ainda tô pensando pera...'
-        enrolation_4 = 'o sortudo da vez é... ... ... ...'
-        enrolation_5 = 'hhhhmmmmmmmmmmmmmmm... .... ...'
-        enrolation_6 = 'ainda tô pensando, pera... ... ... ... ...'
-        outSpeach    = 'Ok! Pra roleta' + enrolation_0 + enrolation_1 + enrolation_2 + enrolation_3 + enrolation_5 + enrolation_6
+        enrolation_3 = 'o sortudo da vez é... ... ... ...'
+        enrolation_4 = 'hhhhmmmmmmmmmmmmmmm... .... ...'
+        enrolation_5 = 'ainda tô pensando, pera... ... ... ... ...'
+        enrolation_6 = 'tá...'
+        outSpeach    = (
+            'Ok! Pra roleta' + 
+            enrolation_0     + 
+            enrolation_1     + 
+            enrolation_2     + 
+            enrolation_4     + 
+            enrolation_5     + 
+            enrolation_6     + 
+            chosen
+        )
         return (
             handler_input.response_builder
-                .speak(f'{outSpeach} tá...: {chosen} !')
+                .speak(outSpeach)
                 .response
         )
 
