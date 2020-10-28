@@ -1,0 +1,127 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "roleta do azar",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "RodarRoletaIntent",
+          "slots": [
+            {
+              "name": "rouletteName",
+              "type": "CUSTOM_NomeRoleta"
+            }
+          ],
+          "samples": [
+            "rodar a {rouletteName}",
+            "rodar a roleta {rouletteName}",
+            "roda a roleta {rouletteName}",
+            "roda {rouletteName}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "teste"
+              }
+            },
+            {
+              "name": {
+                "value": "louça"
+              }
+            },
+            {
+              "name": {
+                "value": "se fodeu"
+              }
+            },
+            {
+              "name": {
+                "value": "azar"
+              }
+            },
+            {
+              "name": {
+                "value": "sorte"
+              }
+            },
+            {
+              "name": {
+                "value": "fome"
+              }
+            },
+            {
+              "name": {
+                "value": "comida"
+              }
+            }
+          ],
+          "name": "CUSTOM_NomeRoleta"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "RodarRoletaIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "rouletteName",
+              "type": "CUSTOM_NomeRoleta",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.356691098380.468502227006"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.356691098380.468502227006",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual o nome da roleta?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Para qual roleta?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Qual seria a roleta?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Qual roleta?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "3"
+}

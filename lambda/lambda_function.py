@@ -49,18 +49,18 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        chosen       = 'João'
+        chosen       = rouleteHandler.getLoser()
         rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
         enrolation_0 = 'o sortudo da vez é...'
         enrolation_1 = 'hmmm...'
         enrolation_2 = 'ainda tô pensando pera...'
-        enrolation_0 = 'o sortudo da vez é... ... ... ...'
-        enrolation_1 = 'hhhhmmmmmmmmmmmmmmm... .... ...'
-        enrolation_2 = 'ainda tô pensando, pera... ... ... ... ...'
-
+        enrolation_4 = 'o sortudo da vez é... ... ... ...'
+        enrolation_5 = 'hhhhmmmmmmmmmmmmmmm... .... ...'
+        enrolation_6 = 'ainda tô pensando, pera... ... ... ... ...'
+        outSpeach    = 'Ok! Pra roleta' + enrolation_0 + enrolation_1 + enrolation_2 + enrolation_3 + enrolation_5 + enrolation_6
         return (
             handler_input.response_builder
-                .speak(f'Ok! Pra roleta {rouletteName},  {enrolation_0} {enrolation_1} {enrolation_2} tá: {chosen} !')
+                .speak(f'{outSpeach} tá...: {chosen} !')
                 .response
         )
 
