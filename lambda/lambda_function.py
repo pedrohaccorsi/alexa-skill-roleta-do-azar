@@ -113,7 +113,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         outSpeach    = (
             'Ok! Pra roleta '       + rouletteName +
             ' o sortuto da vez é: ' + chosen       +
-            ' ... não, pensando bem, mudei de ideia... dessa vez é o Guga'
+            ' ... não, pensando bem, mudei de ideia... dessa vez é o {}'.format('Guga' if 'guga' in items else 'Gustavo')
         )
         
         return (
