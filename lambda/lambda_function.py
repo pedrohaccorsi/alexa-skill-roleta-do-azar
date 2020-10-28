@@ -133,7 +133,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
             chosen_2 = items[ random.randint(0, len(items)-1) ]
             while( chosen_2 == chosen ):
                 chosen_2 = items[ random.randint(0, len(items)-1) ]
-            return( f'Ok! Pra roleta {rouletteName}, o sortuto da vez é: {chosen} ... não, pensando bem, mudei de ideia... dessa vez é o {chosen_2}' )
+            return( f'O sortuto da vez é: {chosen} ... não, pensando bem, mudei de ideia... dessa vez é o {chosen_2}' )
             
         elif ( kind_of_response == 1):
             return ( f'O sortudo é o... , {chosen} !'  )
