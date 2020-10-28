@@ -51,17 +51,17 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         rouletteName       = slots["rouletteName" ].value 
         items              = [] 
 
-        items = ( item.value for item in slots if item.value != rouletteName )
+        #items = ( item.value for item in slots if item.value != rouletteName )
 
-        roulette_attributes = {
-            "name" : rouletteName,
-            "items": items
-        }
-
-        str = 'roleta: ' + rouletteName + ' '
-        for item in items:
-            str += 'item: ' + item + ' '
-
+        #roulette_attributes = {
+        #    "name" : rouletteName,
+        #    "items": items
+        #}
+#
+        #str = 'roleta: ' + rouletteName + ' '
+        #for item in items:
+        #    str += 'item: ' + item + ' '
+        str = rouletteName
         return (
             handler_input.response_builder
                 .speak(str)
