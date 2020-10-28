@@ -108,6 +108,13 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
                     .response
             )
         
+        if ( len(items) <= 1 ):
+            return (
+                handler_input.response_builder
+                    .speak(f'Ops, a roleta possui somente {len(items)} ítens!')
+                    .response
+            )
+
         chosen = items[ random.randint(0, len(items)-1) ] 
         
         outSpeach    = (
