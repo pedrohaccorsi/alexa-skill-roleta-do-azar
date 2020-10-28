@@ -96,14 +96,15 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         
+        expected_rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
         attr = handler_input.attributes_manager.persistent_attributes
         rouletteName = attr["name" ]
         items        = attr["items"]
         
-        if ( rouletteName != handler_input.request_envelope.request.intent.slots["rouletteName" ].value ):
+        if ( rouletteName != expected_rouletteName ):
             return (
                 handler_input.response_builder
-                    .speak('Roleta não encontrada!')
+                    .speak(f'Ops, não encontrei nenhuma roleta chamada {expected_rouletteName}!')
                     .response
             )
         
