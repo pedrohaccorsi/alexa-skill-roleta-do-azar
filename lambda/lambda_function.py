@@ -110,11 +110,11 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         chosen       = items[ random.randint(0, len(items)) ]
         enrolation_0 = ' o sortudo da vez é...'
         enrolation_1 = ' hmmm...'
-        enrolation_2 = ' ainda tô pensando pera...'
+        enrolation_2 = ' ainda tô pensando ... pera...'
         enrolation_3 = ' o sortudo da vez é... ... ... ...'
-        enrolation_4 = ' hmmm hmmm hmmm hmmm ... .... ...'
+        enrolation_4 = ' hmmm ... hmmm ... hmmm ... hmmm ... .... ...'
         enrolation_5 = ' ainda tô pensando... quase ... lá ... ... ... ... ...'
-        enrolation_6 = ' hmmm tá...'
+        enrolation_6 = ' hmmm ... tá...'
         
         outSpeach    = (
             'Ok! Pra roleta ' +  
