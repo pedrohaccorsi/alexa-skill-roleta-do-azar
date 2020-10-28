@@ -49,16 +49,32 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         slots              = handler_input.request_envelope.request.intent.slots
         attributes_manager = handler_input.attributes_manager
         rouletteName       = slots["rouletteName" ].value   
-        
+        items              = []
         str = rouletteName 
         
-        if slots["itemOne"   ].value is not None: str += ' ... ' + slots["itemOne"   ].value + ' ... '
-        if slots["itemTwo"   ].value is not None: str += ' ... ' + slots["itemTwo"   ].value + ' ... '
-        if slots["itemThree" ].value is not None: str += ' ... ' + slots["itemThree" ].value + ' ... '
-        if slots["itemFour"  ].value is not None: str += ' ... ' + slots["itemFour"  ].value + ' ... '
-        if slots["itemFive"  ].value is not None: str += ' ... ' + slots["itemFive"  ].value + ' ... '
-        if slots["itemSix"   ].value is not None: str += ' ... ' + slots["itemSix"   ].value + ' ... '
-                
+        if slots["itemOne"   ].value is not None: items.append( slots["itemOne"   ].value )
+        if slots["itemTwo"   ].value is not None: items.append( slots["itemTwo"   ].value )
+        if slots["itemThree" ].value is not None: items.append( slots["itemThree" ].value )
+        if slots["itemFour"  ].value is not None: items.append( slots["itemFour"  ].value )
+        if slots["itemFive"  ].value is not None: items.append( slots["itemFive"  ].value )
+        if slots["itemSix"   ].value is not None: items.append( slots["itemSix"   ].value )
+               
+        rouleteAttributes = {
+            "name" : rouletteName,
+            "items": items 
+        }
+
+        attributes_manager.persistent_attributes = rouleteAttributes
+        attributes_manager.save_persistent_attributes()
+        
+        str = f'Ok! Salvei a roleta {rouletteName} com os itens '
+        
+        for i in range (len(items)):
+            if ( i == len(items)-1):
+                str += ' e ' + item
+            else:
+                str += item + ', '
+        
         return (
             handler_input.response_builder
                 .speak(str)
