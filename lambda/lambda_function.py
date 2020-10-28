@@ -49,33 +49,16 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         slots              = handler_input.request_envelope.request.intent.slots
         attributes_manager = handler_input.attributes_manager
         rouletteName       = slots["rouletteName" ].value   
-        items              = []
-        str = rouletteName 
         
-        if slots["itemOne"   ].value is not None: items.append( slots["itemOne"   ].value )
-        if slots["itemTwo"   ].value is not None: items.append( slots["itemTwo"   ].value )
-        if slots["itemThree" ].value is not None: items.append( slots["itemThree" ].value )
-        if slots["itemFour"  ].value is not None: items.append( slots["itemFour"  ].value )
-        if slots["itemFive"  ].value is not None: items.append( slots["itemFive"  ].value )
-        if slots["itemSix"   ].value is not None: items.append( slots["itemSix"   ].value )
-
-        str = f'Ok! Salvei a roleta {rouletteName} com os itens '
+        str = rouletteName + ' ... ' + slots["itemOne" ].value   
         
-        for i in range (len(items)):
-            if ( i == len(items)-1):
-                str += ' e ' + items[i]
-            else:
-                str += items[i] + ', '
-        
-               
-        rouleteAttributes = {
-            "name" : rouletteName,
-            "items": items 
-        }
-
-        attributes_manager.persistent_attributes = rouleteAttributes
-        attributes_manager.save_persistent_attributes()
-        
+        for key in slots:
+            try:
+                if key.value != rouletteName:
+                    str = str +  ' ... ' + key.value + ' ... '
+            except:
+                continue
+                
         return (
             handler_input.response_builder
                 .speak(str)
@@ -95,6 +78,10 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
+        
+        attr = handler_input.attributes_manager.persistent_attributes
+        print(attr)
+        
         chosen       = 'João' 
         rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
         enrolation_0 = ' o sortudo da vez é...'
