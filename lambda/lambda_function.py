@@ -112,9 +112,9 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         enrolation_1 = ' hmmm...'
         enrolation_2 = ' ainda tô pensando pera...'
         enrolation_3 = ' o sortudo da vez é... ... ... ...'
-        enrolation_4 = ' hhhhmmmmmmmmmmmmmmm... .... ...'
-        enrolation_5 = ' ainda tô pensando, pera... ... ... ... ...'
-        enrolation_6 = ' tá...'
+        enrolation_4 = ' hmmm hmmm hmmm hmmm ... .... ...'
+        enrolation_5 = ' ainda tô pensando... quase ... lá ... ... ... ... ...'
+        enrolation_6 = ' hmmm tá...'
         
         outSpeach    = (
             'Ok! Pra roleta ' +  
