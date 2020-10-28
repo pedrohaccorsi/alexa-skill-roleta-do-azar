@@ -67,11 +67,11 @@
                       }
                   ],
                   "samples": [
-                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix}",
-                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} {itemFour} {itemFive}",
-                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} {itemFour}",
-                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo}  {itemThree}",
-                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo}"
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} {itemFour} {itemFive} e {itemSix}",
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} {itemFour} e {itemFive}",
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} {itemThree} e {itemFour}",
+                      "Criar a roleta {rouletteName} com os itens {itemOne}  {itemTwo} e {itemThree}",
+                      "Criar a roleta {rouletteName} com os itens {itemOne} e {itemTwo}"
                   ]
               }
           ],

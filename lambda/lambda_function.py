@@ -51,9 +51,7 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         rouletteName       = slots["rouletteName" ].value 
         items              = [] 
 
-        for key in slots:
-            if key.value == rouletteName: continue
-            items.append(key.value)
+        items = ( item.value for item in slots if item.value != rouletteName )
 
         roulette_attributes = {
             "name" : rouletteName,
