@@ -107,26 +107,13 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
                     .response
             )
         
-        chosen       = items[ random.randint(0, len(items)) ]
-        enrolation_0 = ' o sortudo da vez é...'
-        enrolation_1 = ' hmmm...'
-        enrolation_2 = ' deixaaa eu veer...'
-        enrolation_3 = ' ... aindaa tôô pensaaando...'
-        enrolation_4 = ' hmmm...'
-        enrolation_5 = ' quaaase ... lááá ... ... ... ... ...'
-        enrolation_6 = ' hmmm ... tá...'
+        chosen = items[ random.randint(0, len(items)) ] 
         
         outSpeach    = (
-            'Ok! Pra roleta ' +  
-            rouletteName      +
-            enrolation_0      + 
-            enrolation_1      + 
-            enrolation_2      + 
-            enrolation_4      + 
-            enrolation_5      + 
-            enrolation_6      + 
-            chosen
+            'Ok! Pra roleta '       + rouletteName +
+            ' o sortuto da vez é: ' + chosen
         )
+        
         return (
             handler_input.response_builder
                 .speak(outSpeach)
