@@ -58,6 +58,15 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         if slots["itemFour"  ].value is not None: items.append( slots["itemFour"  ].value )
         if slots["itemFive"  ].value is not None: items.append( slots["itemFive"  ].value )
         if slots["itemSix"   ].value is not None: items.append( slots["itemSix"   ].value )
+
+        str = f'Ok! Salvei a roleta {rouletteName} com os itens '
+        
+        for i in range (len(items)):
+            if ( i == len(items)-1):
+                str += ' e ' + item
+            else:
+                str += item + ', '
+        
                
         rouleteAttributes = {
             "name" : rouletteName,
@@ -66,14 +75,6 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
 
         attributes_manager.persistent_attributes = rouleteAttributes
         attributes_manager.save_persistent_attributes()
-        
-        str = f'Ok! Salvei a roleta {rouletteName} com os itens '
-        
-        for i in range (len(items)):
-            if ( i == len(items)-1):
-                str += ' e ' + item
-            else:
-                str += item + ', '
         
         return (
             handler_input.response_builder
