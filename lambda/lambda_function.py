@@ -52,12 +52,12 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         
         str = rouletteName 
         
-        if slots["itemOne"   ].value is not None: str += + ' ... ' + slots["itemOne"   ].value + ' ... '
-        if slots["itemTwo"   ].value is not None: str += + ' ... ' + slots["itemTwo"   ].value + ' ... '
-        if slots["itemThree" ].value is not None: str += + ' ... ' + slots["itemThree" ].value + ' ... '
-        if slots["itemFour"  ].value is not None: str += + ' ... ' + slots["itemFour"  ].value + ' ... '
-        if slots["itemFive"  ].value is not None: str += + ' ... ' + slots["itemFive"  ].value + ' ... '
-        if slots["itemSix"   ].value is not None: str += + ' ... ' + slots["itemSix"   ].value + ' ... '
+        if slots["itemOne"   ].value is not None: str += ' ... ' + slots["itemOne"   ].value + ' ... '
+        if slots["itemTwo"   ].value is not None: str += ' ... ' + slots["itemTwo"   ].value + ' ... '
+        if slots["itemThree" ].value is not None: str += ' ... ' + slots["itemThree" ].value + ' ... '
+        if slots["itemFour"  ].value is not None: str += ' ... ' + slots["itemFour"  ].value + ' ... '
+        if slots["itemFive"  ].value is not None: str += ' ... ' + slots["itemFive"  ].value + ' ... '
+        if slots["itemSix"   ].value is not None: str += ' ... ' + slots["itemSix"   ].value + ' ... '
                 
         return (
             handler_input.response_builder
