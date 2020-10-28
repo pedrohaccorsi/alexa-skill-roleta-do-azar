@@ -49,11 +49,24 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         slots              = handler_input.request_envelope.request.intent.slots
         attributes_manager = handler_input.attributes_manager
         rouletteName       = slots["rouletteName" ].value 
-        firstiItem         = slots["itemOne"      ].value  
+        firstiItem         = slots["itemOne"      ].value
+        secondItem         = ''
+        thirdItem          = ''
+        fouthItem          = ''
+        fifthItem          = ''
+        sixthItem          = ''
         
+        str = rouletteName + ' ... '
+        for key in slots:
+            try:
+                if key.value != rouletteName:
+                    str += ' ... ' key.value + ' ... '
+            except:
+                continue
+                
         return (
             handler_input.response_builder
-                .speak(rouletteName + ' ... ' + slots["itemOne"].value + ' ... ' + slots["itemTwo"].value + ' ... ' + slots["itemThree"].value + ' ... ' + slots["itemFour"].value + ' ... ' + slots["itemFive"].value + ' ... ' + slots["itemSix"].value)
+                .speak(str)
                 .response
         )
 
