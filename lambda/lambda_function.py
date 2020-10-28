@@ -43,7 +43,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> bool
         return ( 
             ask_utils.is_request_type("IntentRequest"    )(handler_input) and 
-            ask_utils.is_intent_name( "RodarRoleta")(handler_input) 
+            ask_utils.is_intent_name( "RodarRoletaIntent")(handler_input) 
         )
                
         
