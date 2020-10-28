@@ -53,7 +53,7 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         
         return (
             handler_input.response_builder
-                .speak(rouletteName + ' ... ' + firstiItem)
+                .speak(rouletteName + ' ... ' + slots["itemOne"].value + ' ... ' + slots["itemTwo"].value + ' ... ' + slots["itemThree"].value + ' ... ' + slots["itemFour"].value + ' ... ' + slots["itemFive"].value + ' ... ' + slots["itemSix"].value)
                 .response
         )
 
