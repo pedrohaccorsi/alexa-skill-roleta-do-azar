@@ -54,7 +54,7 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         for key in slots:
             try:
                 if key.value != rouletteName:
-                    str = ' ... ' + key.value + ' ... '
+                    str = str +  ' ... ' + key.value + ' ... '
             except:
                 continue
                 
