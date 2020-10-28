@@ -154,7 +154,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
             chosen_3 = items[ random.randint(0, len(items)-1) ]
             while( chosen_3 == chosen or chosen_3 == chosen_2 ): 
                 chosen_3 = items[ random.randint(0, len(items)-1) ]
-            return ( f'Tô meio dividida entre {chosen_1} e {chosen_2}, na dúvida, vou de {chosen_3}' )
+            return ( f'Tô meio dividida entre {chosen} e {chosen_2}, na dúvida, vou de {chosen_3}' )
 
         elif ( kind_of_response == 6):
             chosen_2 = items[ random.randint(0, len(items)-1) ]
