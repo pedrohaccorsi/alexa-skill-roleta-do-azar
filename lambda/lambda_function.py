@@ -50,14 +50,30 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         attributes_manager = handler_input.attributes_manager
         rouletteName       = slots["rouletteName" ].value 
         items              = [] 
+        
+        if slots["itemOne" ].value != None and lots["itemOne" ].value != 'None':
+            items.append(slots["itemOne" ].value)
 
-        items = ( item.value for item in slots if item.value != rouletteName )
+        if slots["itemOTwo" ].value != None and lots["itemTwo" ].value != 'None':
+            items.append(slots["itemTwo" ].value)
+            
+        if slots["itemThree" ].value != None and lots["itemThree" ].value != 'None':
+            items.append(slots["itemThree" ].value)
+            
+        if slots["itemFour" ].value != None and lots["itemFour" ].value != 'None':
+            items.append(slots["itemFour" ].value)
+            
+        if slots["itemFive" ].value != None and lots["itemFive" ].value != 'None':
+            items.append(slots["itemFive" ].value)
+            
+        if slots["itemSix" ].value != None and lots["itemSix" ].value != 'None':
+            items.append(slots["itemSix" ].value)
 
         roulette_attributes = {
             "name" : rouletteName,
             "items": items
         }
-#
+
         str = 'roleta: ' + rouletteName + ' '
         for item in items:
             str += 'item: ' + item + ' '
