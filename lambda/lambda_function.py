@@ -47,7 +47,6 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         
         slots              = handler_input.request_envelope.request.intent.slots
-        attributes_manager = handler_input.attributes_manager
         rouletteName       = slots["rouletteName" ].value   
         items              = []
         
@@ -66,13 +65,13 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
             else:
                 outSpeach += ' , ' + items[i]
                 
-        attributes_manager = handler_input.attributes_manager
 
         roulette_attributes = {
             "name": rouletteName,
             "items" : items
         }
-
+        
+        attributes_manager = handler_input.attributes_manager
         attributes_manager.persistent_attributes = roulette_attributes
         attributes_manager.save_persistent_attributes()
         
@@ -96,8 +95,8 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         
-        attr = handler_input.attributes_manager.persistent_attributes
-        print(attr)
+        #attr = handler_input.attributes_manager.persistent_attributes
+        #print(attr)
         
         chosen       = 'João' 
         rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
