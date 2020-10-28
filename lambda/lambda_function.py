@@ -1,8 +1,7 @@
 import os
 import logging
 import ask_sdk_core.utils as ask_utils
-
-#oi
+import random
 
 from ask_sdk_core.skill_builder       import CustomSkillBuilder
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
@@ -98,10 +97,17 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         
         attr = handler_input.attributes_manager.persistent_attributes
-        print(attr)
+        rouletteName = attr["attr" ]
+        items        = attr["items"]
         
-        chosen       = 'João' 
-        rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
+        if ( rouletteName != handler_input.request_envelope.request.intent.slots["rouletteName" ].value ):
+            return (
+                handler_input.response_builder
+                    .speak('Roleta não encontrada!')
+                    .response
+            )
+        
+        chosen       = items[ random.randint(0, len(items)) ]
         enrolation_0 = ' o sortudo da vez é...'
         enrolation_1 = ' hmmm...'
         enrolation_2 = ' ainda tô pensando pera...'
@@ -109,6 +115,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         enrolation_4 = ' hhhhmmmmmmmmmmmmmmm... .... ...'
         enrolation_5 = ' ainda tô pensando, pera... ... ... ... ...'
         enrolation_6 = ' tá...'
+        
         outSpeach    = (
             'Ok! Pra roleta ' +  
             rouletteName      +
