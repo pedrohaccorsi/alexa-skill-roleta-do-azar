@@ -57,7 +57,7 @@ class CriarRoletaIntentHandler(AbstractRequestHandler):
         if ( slots["itemFive" ].value is not None ): items.append( slots["itemFive" ].value )
         if ( slots["itemSix"  ].value is not None ): items.append( slots["itemSix"  ].value )
 
-        outSpeach = f'Ok! Salvei a roleta {rouletteName} com os items '
+        outSpeach = f'Ok! Salvei a roleta {rouletteName} com os ítems '
         
         for i in range(len(items)):
             if i == len(items)-1:
