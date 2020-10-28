@@ -95,8 +95,8 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         
-        #attr = handler_input.attributes_manager.persistent_attributes
-        #print(attr)
+        attr = handler_input.attributes_manager.persistent_attributes
+        print(attr)
         
         chosen       = 'João' 
         rouletteName = handler_input.request_envelope.request.intent.slots["rouletteName" ].value 
