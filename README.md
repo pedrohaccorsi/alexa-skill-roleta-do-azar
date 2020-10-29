@@ -1,1 +1,0 @@
-# Roleta do azar
