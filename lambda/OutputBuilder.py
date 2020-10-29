@@ -19,18 +19,15 @@ class OutputSpeachBuilder_01(OutputSpeachBuilder_00):
         new_selected_item = self.getRandomItem( ignore = [self.selected_item] )
         return( f'O sortuto da vez é: {self.selected_item} ... não, pensando bem, mudei de ideia... dessa vez é o {new_selected_item}' )
             
-
 class OutputSpeachBuilder_02(OutputSpeachBuilder_00):
 
     def get(self):
         return ( f'O sortudo é o... , {self.selected_item} !'  )
 
-
 class OutputSpeachBuilder_03(OutputSpeachBuilder_00):
     
     def get(self):
         return ( f'Com 53 por cento dos votos, ... , ... {self.selected_item}, é você!' )
-
 
 class OutputSpeachBuilder_04(OutputSpeachBuilder_00):
     
@@ -49,13 +46,11 @@ class OutputSpeachBuilder_06(OutputSpeachBuilder_00):
         selected_item_3 = self.getRandomItem(ignore = [self.selected_item, selected_item_2])
         return ( f'Tô meio dividida entre {self.selected_item} e {selected_item_2}, na dúvida, vou de {selected_item_3}' )
 
-
 class OutputSpeachBuilder_07(OutputSpeachBuilder_00):
     
     def get(self):
         selected_item_2 = self.getRandomItem(ignore = [self.selected_item])
         return ( f'Par ou ímpar entre {self.selected_item} e {selected_item_2}' )
-
 
 class OutputSpeachBuilder_08(OutputSpeachBuilder_00):
 
@@ -73,7 +68,6 @@ class OutputSpeachBuilder_10(OutputSpeachBuilder_00):
     def get(self):
         return ( f'O sortudo é o... , {self.selected_item} !'  )
 
-
 class OutputSpeachBuilder_11(OutputSpeachBuilder_00):
 
     def get(self):
@@ -85,18 +79,15 @@ class OutputSpeachBuilder_12(OutputSpeachBuilder_00):
         selected_item_2 = self.getRandomItem(ignore = [self.selected_item])
         return ( f'Eu eras mais {self.selected_item}, mas pedi a opinião do pessoal aqui e aí me convenceram... {selected_item_2}, é você' )
 
-
 class OutputSpeachBuilder_13(OutputSpeachBuilder_00):
     
     def get(self):
         return ( f'É muito difícil dizer isso, mas... infelizmente... acho que... quem volta pra casa hoje... é você ... , ... , ... , , , ... , , ... , {self.selected_item}' )
 
-
 class OutputSpeachBuilder_14(OutputSpeachBuilder_00):
     
     def get(self):
         return ( f'rra rra rra {self.selected_item}'  )
-
 
 class OutputSpeachBuilder_15(OutputSpeachBuilder_00):
 
