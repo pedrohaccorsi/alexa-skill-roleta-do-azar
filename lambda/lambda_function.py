@@ -127,7 +127,9 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         chosen_2 = ''
         chosen_3 = ''
 
-        kind_of_response = random.randint(0, 16) 
+        factor = random.randint(0, 20)
+        for _ in range (factor):
+            kind_of_response = random.randint(0, 16)  
 
         if ( kind_of_response == 0):
             chosen_2 = items[ random.randint(0, len(items)-1) ]
