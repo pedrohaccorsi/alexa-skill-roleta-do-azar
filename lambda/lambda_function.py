@@ -127,7 +127,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         chosen_2 = ''
         chosen_3 = ''
 
-        kind_of_response = random.randint(0, 15) 
+        kind_of_response = random.randint(0, 16) 
 
         if ( kind_of_response == 0):
             chosen_2 = items[ random.randint(0, len(items)-1) ]
@@ -186,13 +186,13 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
                 chosen_2 = items[ random.randint(0, len(items)-1) ]
             return ( f'Eu eras mais {chosen}, mas pedi a opinião do pessoal aqui e aí me convenceram... {chosen_2}, é você' )
 
-        elif ( kind_of_response == 12):
+        elif ( kind_of_response == 13):
             return ( f'É muito difícil dizer isso, mas... infelizmente... acho que... quem volta pra casa hoje... é você ... , ... , ... , , , ... , , ... , {chosen}' )
 
-        elif ( kind_of_response == 12):
+        elif ( kind_of_response == 14):
             return ( f'haha {chosen}'  )
 
-        elif ( kind_of_response == 12):
+        elif ( kind_of_response == 15):
             return ( f'Juro que calculei 3 vezes e caiu {chosen} em todas' )
 
         else: 
