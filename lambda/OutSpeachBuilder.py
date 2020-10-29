@@ -101,7 +101,15 @@ class OutputSpeachBuilder_16(OutputSpeachBuilder_00):
 
 class OutputSpeachBuilderFactory():
 
-    def make(self, responseType, items, selected_item):
+    def getResponseType(self):
+        luckyFactor = random.randint(1, 20)
+        for _ in range (luckyFactor):
+            responseType = random.randint(1, 16)  
+        return responseType
+        
+    def make(self, items, selected_item):
+
+        responseType = self.getResponseType()
 
         if responseType == 1 : return OutputSpeachBuilder_01(items, selected_item)
         if responseType == 2 : return OutputSpeachBuilder_02(items, selected_item)

@@ -1,5 +1,4 @@
-import random
-from   OutputBuilder import OutputSpeachBuilderFactory
+from OutSpeachBuilder import OutputSpeachBuilderFactory
 
 class RouleteHandler():
 
@@ -9,30 +8,15 @@ class RouleteHandler():
         self.numOfItems   = len(self.rouleteItems)
 
     def run(self):
-        return ( 
-            self.getOutputSpeech(
-                self.getRandomItem()
-            )
-        )
+        return ( self.getOutputSpeech( self.getRandomItem() ) )
         
     def getRandomItem(self, ignore=[]):
         return self.rouleteItems[ random.randint(0, self.numOfItems-1  ) ]
-
-    def getResponseType(self):
-        luckyFactor = random.randint(1, 20)
-        for _ in range (luckyFactor):
-            responseType = random.randint(1, 16)  
-        return responseType
 
 
     def getOutputSpeech(self, selected_item):
         return ( 
             OutputSpeachBuilderFactory()
-                .make(
-                    self.getResponseType(),
-                    self.rouleteItems, 
-                    selected_item
-                )
+                .make( self.rouleteItems, selected_item )
                 .get()
-        
         )
