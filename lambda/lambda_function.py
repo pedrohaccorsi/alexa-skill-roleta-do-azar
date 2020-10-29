@@ -192,7 +192,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
             return ( f'É muito difícil dizer isso, mas... infelizmente... acho que... quem volta pra casa hoje... é você ... , ... , ... , , , ... , , ... , {chosen}' )
 
         elif ( kind_of_response == 14):
-            return ( f'hahahaha {chosen}'  )
+            return ( f'rra rra rra {chosen}'  )
 
         elif ( kind_of_response == 15):
             return ( f'Juro que calculei 3 vezes e caiu {chosen} em todas' )
