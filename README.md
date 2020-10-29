@@ -19,7 +19,7 @@ $ ask smapi get-interaction-model
 
 ```
 $ cd roleta-do-azar
-$ git pull personal
+$ git pull personal <branch>
 $ git add .
 $ git commit -m <message>
 $ git push personal
@@ -29,7 +29,7 @@ $ git push personal
 
 ```
 $ cd roleta-do-azar
-$ git pull origin
+$ git pull origin <branch>
 $ git add .
 $ git commit -m <message>
 $ git push origin
