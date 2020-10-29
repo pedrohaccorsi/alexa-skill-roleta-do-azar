@@ -171,7 +171,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
             chosen_2 = items[ random.randint(0, len(items)-1) ]
             while( chosen_2 == chosen ):
                 chosen_2 = items[ random.randint(0, len(items)-1) ]
-            return f'depente... se o ítem {chosen} foi sorteado alguma vez nos últimos 3 dias, então é {chosen_2}, mas se não, {chosen}'
+            return f'hmmm... se o ítem {chosen} foi sorteado alguma vez nos últimos 3 dias, então é {chosen_2}, mas se não, {chosen}'
 
         elif ( kind_of_response == 9):
             return ( f'O sortudo é o... , {chosen} !'  )
