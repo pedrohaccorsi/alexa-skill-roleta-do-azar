@@ -3,9 +3,9 @@ from   OutputBuilder import OutputSpeachBuilderFactory
 
 class RouleteHandler():
 
-    def __init__(self, roulete):
-        self.rouleteName  = roulete["name"]
-        self.rouleteItems = roulete["items"]
+    def __init__(self, roulette):
+        self.rouleteName  = roulette["name"]
+        self.rouleteItems = roulette["items"]
         self.numOfItems   = len(self.rouleteItems)
 
     def run(self):
@@ -16,7 +16,7 @@ class RouleteHandler():
         )
         
     def getRandomItem(self, ignore=[]):
-        return self.rouleteItems[ random.randint(0, numOfItems-1  ) ]
+        return self.rouleteItems[ random.randint(0, self.numOfItems-1  ) ]
 
     def getResponseType(self):
         luckyFactor = random.randint(1, 20)
