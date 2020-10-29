@@ -21,7 +21,7 @@ class RouleteHandler():
     def getResponseType(self):
         luckyFactor = random.randint(1, 20)
         for _ in range (luckyFactor):
-            responseType = random.randint(0, 16)  
+            responseType = random.randint(1, 16)  
         return responseType
 
 
