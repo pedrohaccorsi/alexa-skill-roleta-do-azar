@@ -15,7 +15,7 @@ $ ask smapi get-interaction-model
    > skill-package\interactionModels\custom\pt-BR.json
 ```
 
-## Local <-> This repo
+### Local <-> This repo
 
 ```
 $ cd roleta-do-azar
@@ -25,7 +25,7 @@ $ git commit -m <message>
 $ git push personal
 ```
 
-## Local <-> Amazon 
+### Local <-> Amazon 
 
 ```
 $ cd roleta-do-azar
@@ -35,7 +35,7 @@ $ git commit -m <message>
 $ git push origin
 ```
 
-## Local -> This repo && Amazon
+### Local -> This repo && Amazon
 
 ```
 $ cd roleta-do-azar
