@@ -9,6 +9,7 @@ from ask_sdk_core.dispatch_components import AbstractExceptionHandler
 from ask_sdk_core.handler_input       import HandlerInput
 from ask_sdk_model                    import Response
 from ask_sdk_s3.adapter               import S3Adapter
+from RouleteHandler                   import RouleteHandler
 
 s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
 
@@ -114,92 +115,15 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
                     .speak(f'Ops, a roleta possui somente {len(items)} ítens!')
                     .response
             )
-             
+
         return (
             handler_input.response_builder
-                .speak(self.__getLoser(items))
+                .speak( 
+                    RouleteHandler( attr )
+                        .run() 
+                    )
                 .response
         )
-
-    def __getLoser(self, items):
-
-        chosen   = items[ random.randint(0, len(items)-1) ] 
-        chosen_2 = ''
-        chosen_3 = ''
-
-        factor = random.randint(1, 20)
-        for _ in range (factor):
-            kind_of_response = random.randint(0, 16)  
-
-        if ( kind_of_response == 0):
-            chosen_2 = items[ random.randint(0, len(items)-1) ]
-            while( chosen_2 == chosen ):
-                chosen_2 = items[ random.randint(0, len(items)-1) ]
-            return( f'O sortuto da vez é: {chosen} ... não, pensando bem, mudei de ideia... dessa vez é o {chosen_2}' )
-            
-        elif ( kind_of_response == 1):
-            return ( f'O sortudo é o... , {chosen} !'  )
-
-        elif ( kind_of_response == 2):
-            return ( f'Com 53 por cento dos votos, ... , ... {chosen}, é você!' )
-
-        elif ( kind_of_response == 3):
-            return( f'A decisão é unânime: {chosen}' )
-
-        elif ( kind_of_response == 4):
-            return ( f'Nessa não preciso nem pensar, claro que é o {chosen}' )
-
-        elif ( kind_of_response == 5 and len(items) >= 3 ):
-            chosen_2 = items[ random.randint(0, len(items)-1) ]
-            while( chosen_2 == chosen ): 
-                chosen_2 = items[ random.randint(0, len(items)-1) ]
-            chosen_3 = items[ random.randint(0, len(items)-1) ]
-            while( chosen_3 == chosen or chosen_3 == chosen_2 ): 
-                chosen_3 = items[ random.randint(0, len(items)-1) ]
-            return ( f'Tô meio dividida entre {chosen} e {chosen_2}, na dúvida, vou de {chosen_3}' )
-
-        elif ( kind_of_response == 6):
-            chosen_2 = items[ random.randint(0, len(items)-1) ]
-            while( chosen_2 == chosen ):
-                chosen_2 = items[ random.randint(0, len(items)-1) ]
-            return ( f'Par ou ímpar entre {chosen} e {chosen_2}' )
-
-        elif ( kind_of_response == 7):
-            return chosen
-
-        elif ( kind_of_response == 8):
-            chosen_2 = items[ random.randint(0, len(items)-1) ]
-            while( chosen_2 == chosen ):
-                chosen_2 = items[ random.randint(0, len(items)-1) ]
-            return f'hmmm... se o ítem {chosen} foi sorteado alguma vez nos últimos 3 dias, então é {chosen_2}, mas se não, {chosen}'
-
-        elif ( kind_of_response == 9):
-            return ( f'O sortudo é o... , {chosen} !'  )
-
-        elif ( kind_of_response == 10):
-            return ( f'O ítem {chosen} tá meio suspeito, então vai ele mesmo' )
-
-        elif ( kind_of_response == 11):
-            return ( f'Pedi até pro google e ele acha que tem que ser o {chosen}' )
-
-        elif ( kind_of_response == 12):
-            chosen_2 = items[ random.randint(0, len(items)-1) ]
-            while( chosen_2 == chosen ):
-                chosen_2 = items[ random.randint(0, len(items)-1) ]
-            return ( f'Eu eras mais {chosen}, mas pedi a opinião do pessoal aqui e aí me convenceram... {chosen_2}, é você' )
-
-        elif ( kind_of_response == 13):
-            return ( f'É muito difícil dizer isso, mas... infelizmente... acho que... quem volta pra casa hoje... é você ... , ... , ... , , , ... , , ... , {chosen}' )
-
-        elif ( kind_of_response == 14):
-            return ( f'rra rra rra {chosen}'  )
-
-        elif ( kind_of_response == 15):
-            return ( f'Juro que calculei 3 vezes e caiu {chosen} em todas' )
-
-        else: 
-            return'guga' if 'guga' in items else chosen 
-
 
 class HelpIntentHandler(AbstractRequestHandler):
     """Handler for Help Intent."""
