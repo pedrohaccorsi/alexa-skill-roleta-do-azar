@@ -10,8 +10,8 @@ class RouleteHandler():
 
     def run(self):
         return ( 
-            getOutputSpeech(
-                getRandomItem()
+            self.getOutputSpeech(
+                self.getRandomItem()
             )
         )
         
@@ -29,7 +29,7 @@ class RouleteHandler():
         return ( 
             OutputSpeachBuilderFactory()
                 .make(
-                    getResponseType(),
+                    self.getResponseType(),
                     self.rouleteItems, 
                     selected_item
                 )
