@@ -99,7 +99,7 @@ class OutputSpeachBuilder_16(OutputSpeachBuilder_00):
     def get(self):
         return'guga' if 'guga' in self.items else self.selected_item 
 
-class OutputSpeachBuilderFactory(OutputSpeachBuilder_00):
+class OutputSpeachBuilderFactory():
 
     def make(self, responseType, items, selected_item):
 
