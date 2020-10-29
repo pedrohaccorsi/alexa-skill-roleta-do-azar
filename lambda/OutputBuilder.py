@@ -8,8 +8,9 @@ class OutputSpeachBuilder_00():
         self.numOfItems    = len(items)
 
     def getRandomItem(self, ignore=[]):
-        while( item := self.items[ random.randint(0, self.numOfItems)-1] in ignore ):
-            continue
+        item = self.items[ random.randint(0, self.numOfItems)-1]
+        while( item in ignore ):
+            item = self.items[ random.randint(0, self.numOfItems)-1]
         return item 
 
 class OutputSpeachBuilder_01(OutputSpeachBuilder_00):
