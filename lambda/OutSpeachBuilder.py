@@ -61,7 +61,7 @@ class OutputSpeachBuilder_09(OutputSpeachBuilder_00):
     
     def get(self):
         selected_item_2 = self.getRandomItem(ignore = [self.selected_item])
-        return f'hmmm... se o ítem {self.selected_item} foi sorteado alguma vez nos últimos 3 dias, então é {selected_item_2}, mas se não, {chosen}'
+        return f'hmmm... se o ítem {self.selected_item} foi sorteado alguma vez nos últimos 3 dias, então é {selected_item_2}, mas se não, {self.selected_item}'
 
 class OutputSpeachBuilder_10(OutputSpeachBuilder_00):
     
