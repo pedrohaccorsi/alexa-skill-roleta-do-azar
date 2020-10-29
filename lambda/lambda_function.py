@@ -127,7 +127,7 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
         chosen_2 = ''
         chosen_3 = ''
 
-        kind_of_response = random.randint(0, 9) 
+        kind_of_response = random.randint(0, 15) 
 
         if ( kind_of_response == 0):
             chosen_2 = items[ random.randint(0, len(items)-1) ]
@@ -170,6 +170,30 @@ class RodarRoletaIntentHandler(AbstractRequestHandler):
             while( chosen_2 == chosen ):
                 chosen_2 = items[ random.randint(0, len(items)-1) ]
             return f'depente... se o ítem {chosen} foi sorteado alguma vez nos últimos 3 dias, então é {chosen_2}, mas se não, {chosen}'
+
+        elif ( kind_of_response == 9):
+            return ( f'O sortudo é o... , {chosen} !'  )
+
+        elif ( kind_of_response == 10):
+            return ( f'O ítem {chosen} tá meio suspeito, então vai ele mesmo' )
+
+        elif ( kind_of_response == 11):
+            return ( f'Pedi até pro google e ele acha que tem que ser o {chosen}' )
+
+        elif ( kind_of_response == 12):
+            chosen_2 = items[ random.randint(0, len(items)-1) ]
+            while( chosen_2 == chosen ):
+                chosen_2 = items[ random.randint(0, len(items)-1) ]
+            return ( f'Eu eras mais {chosen}, mas pedi a opinião do pessoal aqui e aí me convenceram... {chosen_2}, é você' )
+
+        elif ( kind_of_response == 12):
+            return ( f'É muito difícil dizer isso, mas... infelizmente... acho que... quem volta pra casa hoje... é você ... , ... , ... , , , ... , , ... , {chosen}' )
+
+        elif ( kind_of_response == 12):
+            return ( f'haha {chosen}'  )
+
+        elif ( kind_of_response == 12):
+            return ( f'Juro que calculei 3 vezes e caiu {chosen} em todas' )
 
         else: 
             return'guga' if 'guga' in items else chosen 
